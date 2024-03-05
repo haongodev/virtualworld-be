@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+Disallow: /management/
+Sitemap: https://phimhottt.com/sitemap.xml

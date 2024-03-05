@@ -1,0 +1,47 @@
+@layer base {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+}
+.drop-hover:hover > .drop-data{
+  display: block!important;
+}
+.dow-swip .swiper-wrapper{
+  padding-top: 10px;
+}
+.dod-swip .swiper-wrapper{
+  padding-top: 10px;
+}
+.swiper-pagination-bullets-dynamic{
+  transform: unset!important;
+  position: relative!important;
+  bottom: 0!important;
+  margin-top: 10px;
+  left: calc(50% - 40px)!important;
+}
+.dod-swip:hover .swiper-button-next{
+  display: block!important;
+}
+.dod-swip:hover .swiper-button-prev{
+  display: block!important;
+}
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.2)
+}
+.mycustom-scrollbar::-webkit-scrollbar {
+  background-color: transparent;
+  height: 5px!important;
+}
+.scrbar-scrums::-webkit-scrollbar {
+  height: 0px!important;
+}
+.scrbar-eps::-webkit-scrollbar {
+  background-color: transparent;
+  height: 5px!important;
+}

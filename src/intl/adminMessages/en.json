@@ -1,0 +1,40 @@
+{  
+    "NotFoundPage":{
+        "title":"404 Not Found",
+        "subtitle":"Whoops! That page doesn’t exist.",
+        "description":"Here are some helpful links instead:"
+    },
+    "Meta":{
+        "title":{
+            "index": "Dashboard",
+            "MovieList":"Movie List",
+            "home":"Home",
+            "product": "Product",
+            "category": "Category",
+            "order": "Order"
+        }
+    },
+    "Dashboard":{
+        "sale_by_gender": "Sale By Gender"
+    },
+    "Ecommflex":{
+        "title":"An e-commerce web application | Ecommflex",
+        "description":"React Next.js ecommerce template. Build SEO friendly Online store, delivery app and Multivendor store"
+    },
+    "Contain":{    
+        "title": "All Shops",
+        "list":{
+            "movie":{
+                "types":{
+                    "single":"Single",
+                    "series":"Series",
+                    "review":"Review"
+                }
+            }
+        }
+    },
+    "Navigation":{
+        "categories" : "Categories",
+        "store": "Store"
+    }
+}

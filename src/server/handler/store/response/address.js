@@ -1,0 +1,16 @@
+export const responseAddress = (address) => address.map((adr) => ({
+    id: adr.id,
+    phone: adr.phone,
+    address: adr.address,
+    street: adr.street,
+    ward_name: adr.ward_name,
+    district_name: adr.district_name,
+    province_name: adr.province_name,
+    ward: adr.ward,
+    district: adr.district,
+    province: adr.province,
+    country: adr.country,
+    office: adr.office,
+    warehouse: adr.warehouse,
+    pickup: adr.pickup,
+}))

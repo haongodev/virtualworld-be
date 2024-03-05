@@ -1,0 +1,30 @@
+export const initCastMovie = [
+    {
+        "id_movie":"1",
+        "id_cast":"1"
+    },
+    {
+        "id_movie":"1",
+        "id_cast":"2"
+    },
+    {
+        "id_movie":"1",
+        "id_cast":"3"
+    },
+    {
+        "id_movie":"1",
+        "id_cast":"4"
+    },
+    {
+        "id_movie":"1",
+        "id_cast":"5"
+    },
+    {
+        "id_movie":"1",
+        "id_cast":"6"
+    },
+    {
+        "id_movie":"1",
+        "id_cast":"7"
+    },
+]

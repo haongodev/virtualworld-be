@@ -1,0 +1,35 @@
+export const initMovieCountries = [
+    {
+        "id_country":"3",
+        "id_movie":"1",
+    },
+    {
+        "id_country":"3",
+        "id_movie":"2",
+    },
+    {
+        "id_country":"6",
+        "id_movie":"4",
+    },
+    {
+        "id_country":"3",
+        "id_movie":"5",
+    },
+    {
+        "id_country":"3",
+        "id_movie":"6",
+    },
+    {
+        "id_country":"3",
+        "id_movie":"7",
+    },
+    {
+        "id_country":"3",
+        "id_movie":"8",
+    },
+    {
+        "id_country":"3",
+        "id_movie":"9",
+    },
+  ];
+  

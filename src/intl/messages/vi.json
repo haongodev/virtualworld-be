@@ -1,0 +1,53 @@
+{  
+    "NotFoundPage":{
+        "title":"404 không tìm thấy",
+        "subtitle":"Rất tiếc! Trang đó không tồn tại.",
+        "description":"Dưới đây là một số liên kết hữu ích thay thế:"
+    },
+    "Meta":{
+        "title":{
+            "year_publish":"Năm Phát Hành {yearSlug}",
+            "home":"Trang Chủ",
+            "store":"Cửa Hàng",
+            "cart":"Giỏ Hàng",
+            "checkout":"Thanh Toán",
+            "category":"Danh Mục",
+            "account":{
+                "profile":{
+                    "index":"Tài Khoản"
+                },
+                "address":{
+                    "index":"Địa Chỉ",
+                    "create":"Tạo Địa Chỉ",
+                    "edit":"Chỉnh Sửa Địa Chỉ"
+                },
+                "orders":{
+                    "index":"Đơn Hàng",
+                    "success":"Đặt Hàng Thành Công"
+                },
+                "payment":"Phương Thức Thanh Toán",
+                "support_tickets":"Phiếu Hổ Trợ",
+                "wish_list":"Yêu Thích"
+            }
+        }
+    },
+    "VirtualWorld":{
+        "title":"Xem Phim Hot - Phim chiếu rạp - Review Phim mới nhất {year}",
+        "description":"Với hơn 100000+ bộ phim (phimhot, phimmoi, phimchieurap, phimhay, fullHD, vietsub, thuyết minh ) được cập nhật liên tục tại phimhottt.com"
+    },
+    "Heading":{    
+        "relation_movie": "Phim Liên Quan",
+        "hot_movie": "Phim Hot",
+        "maybe_youlike": "Có Thể Bạn Sẽ Thích",
+        "new_movie": "Phim Mới Nổi Bật",
+        "new_cinema_movies": "Phim Chiếu Rạp Mới Cập Nhật",
+        "new_series": "Phim Bộ Mới Cập Nhật",
+        "new_retail_movies": "Phim Lẻ Mới Cập Nhật",
+        "news": "Tin Tức",
+        "year_publish": "Năm Phát Hành"
+    },
+    "Navigation":{
+        "categories" : "Danh Mục",
+        "store": "Cửa Hàng"
+    }
+}

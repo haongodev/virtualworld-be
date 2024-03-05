@@ -1,0 +1,358 @@
+// This is your Prisma schema file
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Categories {
+  id Int @id @default(autoincrement())
+  name String
+  slug String @unique
+  description String? @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime? @updatedAt
+  movies Movies[]
+  @@map("vw_categories")
+}
+
+model Movies {
+  id String @id @default(uuid())
+  name String
+  slug String @unique
+  origin_name String
+  publish_date DateTime? @db.Date()
+  quality String?
+  language String?
+  rating_count Int? @default(0)
+  rating_point Int? @default(0)
+  thumb_image String? @db.Text
+  image String? @db.Text
+  summary String? @db.Text
+  trailer_url String? @db.Text
+  view Int? @default(0)
+  share Int? @default(0)
+  id_category Int
+  total_episode Int?
+  time String?
+  status String?
+  is_copyright Boolean @default(false)
+  sub_docquyen Boolean @default(false)
+  is_hot Boolean @default(false)
+  current_episode Int?
+  is_cinema Boolean @default(false)
+  description String? @db.Text
+  source_from String? @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime? @updatedAt
+  type MovieType[]
+  figure Figure[]
+  movie_director MovieDirector[]
+  episodes MovieEpisode[]
+  server MovieServer[]
+  movieCountries MovieCountries[]
+  report Report[]
+  category Categories @relation(fields: [id_category], references: [id])
+  @@map("vw_movies")
+}
+
+model MovieCountries {
+  id String @id @default(uuid())
+  id_movie String
+  id_country String
+  movie Movies @relation(fields: [id_movie], references: [id])
+  country Countries @relation(fields: [id_country], references: [id])
+  @@map("vw_movie_country")
+}
+
+model MovieEpisode {
+  id String @id @default(uuid())
+  id_movie String
+  name String
+  slug String
+  createdAt DateTime @default(now())
+  movie Movies @relation(fields: [id_movie], references: [id])
+  server MovieServer[]
+  @@map("vw_movie_episode")
+}
+
+model MovieServer {
+  id String @id @default(uuid())
+  id_movie String
+  id_episode String?
+  name String
+  is_upload Boolean @default(false)
+  stream String? @db.Text
+  source String? @db.Text
+  createdAt DateTime @default(now())
+  movie Movies @relation(fields: [id_movie], references: [id])
+  episode MovieEpisode? @relation(fields: [id_episode], references: [id])
+  @@map("vw_movie_server")
+}
+
+model Type {
+  id String @id @default(uuid())
+  name String?
+  description String? @db.Text
+  slug String @unique
+  createdAt DateTime @default(now())
+  movies MovieType[]
+  @@map("vw_type")
+}
+
+model MovieType {
+  id Int @id @default(autoincrement())
+  id_movie String
+  id_type String
+  createdAt DateTime @default(now())
+  type Type @relation(fields: [id_type], references: [id])
+  movie Movies @relation(fields: [id_movie], references: [id])
+  @@map("vw_movie_type")
+}
+
+model Countries {
+  id String @id @default(uuid())
+  name String?
+  slug String? @unique
+  description String? @db.Text
+  createdAt DateTime @default(now())
+  movieCountries MovieCountries[]
+  @@map("vw_countries")
+}
+
+model MovieDirector {
+  id String @id @default(uuid())
+  id_movie String
+  id_director String
+  director Director @relation(fields: [id_director], references: [id])
+  movie Movies @relation(fields: [id_movie], references: [id])
+  @@map("vw_movie_director")
+}
+
+model Director {
+  id String @id @default(uuid())
+  name String?
+  slug String @unique
+  avatar String? @db.Text
+  movies MovieDirector[]
+  @@map("vw_director")
+}
+
+model Figure {
+  id String @id @default(uuid())
+  id_movie String
+  id_cast String
+  name String?
+  movie Movies @relation(fields: [id_movie], references: [id])
+  cast Cast @relation(fields: [id_cast], references: [id])
+  @@map("vw_figure")
+}
+
+model Cast {
+  id String @id @default(uuid())
+  name String?
+  slug String @unique
+  avatar String? @db.Text
+  figure Figure[]
+  @@map("vw_cast")
+}
+
+model Admin {
+
+  id String @id @default(uuid())
+
+  first_name String?
+
+  last_name String?
+
+  email String
+
+  sex String?
+
+  birthday DateTime? @db.DateTime()
+
+  password String?
+
+  phone String?
+
+  facebook_auth String?
+
+  google_auth String?
+
+  remember_token String?
+
+  avatar String? @db.Text
+
+  status Int @default(1) @db.TinyInt
+
+  email_verify_at DateTime? @db.DateTime()
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime? @updatedAt
+
+  account AdminAccount[]
+
+  sessions ShopSession[]
+
+  @@map("vw_admin")
+}
+
+model AdminAccount {
+
+  id String @id @default(cuid())
+
+  admin_id String
+
+  type String
+
+  provider String
+
+  providerAccountId String
+
+  refresh_token String? @db.Text
+
+  access_token String? @db.Text
+
+  expires_at Int?
+
+  token_type String?
+
+  scope String?
+
+  id_token String? @db.Text
+
+  session_state String?
+
+  admin Admin @relation(fields: [admin_id], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("vw_admn_account")
+}
+
+model ShopSession {
+
+  id String @id @default(cuid())
+
+  sessionToken String @unique
+
+  customer_id String?
+
+  admin_id String?
+
+  expires DateTime
+
+  customer Customer? @relation(fields: [customer_id], references: [id], onDelete: Cascade)
+
+  admin Admin? @relation(fields: [admin_id], references: [id], onDelete: Cascade)
+
+  @@map("vw_session")
+}
+
+model Customer {
+
+  id String @id @default(cuid())
+
+  first_name String?
+
+  last_name String?
+
+  email String
+
+  sex String?
+
+  birthday DateTime? @db.DateTime()
+
+  password String?
+
+  postcode Int?
+
+  phone String?
+
+  facebook_auth String?
+
+  google_auth String?
+
+  remember_token String?
+
+  avatar String? @db.Text
+
+  status Int @default(1) @db.TinyInt
+
+  email_verify_at DateTime? @db.DateTime()
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime? @updatedAt
+
+  accounts ShopCustomerAccount[]
+
+  sessions ShopSession[]
+
+  @@map("vw_customer")
+}
+
+model ShopCustomerAccount {
+
+  id String @id @default(cuid())
+
+  customer_id String
+
+  store_id Int
+
+  type String
+
+  provider String
+
+  providerAccountId String
+
+  refresh_token String? @db.Text
+
+  access_token String? @db.Text
+
+  expires_at Int?
+
+  token_type String?
+
+  scope String?
+
+  id_token String? @db.Text
+
+  session_state String?
+
+  customer Customer @relation(fields: [customer_id], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId, store_id])
+  @@map("vw_customer_account")
+}
+
+model Advers {
+  id String @id @default(cuid())
+  position String?
+  url String? @db.Text
+  image String? @db.Text
+  @@map("vw_ads")
+}
+
+model Report {
+  id String @id @default(cuid())
+  type_id String
+  movie_id String
+  resolved Boolean @default(false)
+  movie Movies @relation(fields: [movie_id], references: [id], onDelete: Cascade)
+  type ReportType @relation(fields: [type_id], references: [id], onDelete: Cascade)
+  @@map("vw_report")
+}
+
+model ReportType {
+  id String @id @default(cuid())
+  type String
+  description String?
+  report Report[]
+  @@map("vw_report_type")
+}

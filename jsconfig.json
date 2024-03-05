@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "ES6", // Phiên bản JavaScript mà bạn đang sử dụng
+    "module": "commonjs", // Hoặc "ES6" nếu bạn đang sử dụng ES modules
+    "allowJs": true, // Cho phép sử dụng các tệp JavaScript
+    "checkJs": true, // Bật kiểm tra mã JavaScript
+    "noImplicitAny": false,
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+}

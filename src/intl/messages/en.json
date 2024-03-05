@@ -1,0 +1,53 @@
+{  
+    "NotFoundPage":{
+        "title":"404 Not Found",
+        "subtitle":"Whoops! That page doesn’t exist.",
+        "description":"Here are some helpful links instead:"
+    },
+    "Meta":{
+        "title":{
+            "year_publish":"Year Publish {yearSlug}",
+            "home":"Home",
+            "cart":"Cart",
+            "checkout":"Checkout",
+            "store":"Store",
+            "category":"Category",
+            "account":{
+                "profile":{
+                    "index":"Account"
+                },
+                "address":{
+                    "index":"Address",
+                    "create":"Create Address",
+                    "edit":"Edit Address"
+                },
+                "orders":{
+                    "index":"Orders",
+                    "success":"Order Success"
+                },
+                "payment":"Payment Method",
+                "support_tickets":"Support Tickets",
+                "wish_list":"Wish List"
+            }
+        }
+    },
+    "VirtualWorld":{
+        "title":"Watch Hot Movies - Movies in Theaters - Review Latest Movies {year}",
+        "description":"with more than 100000+ (phimhot, phimmoi, phimchieurap, phimhay2024, fullHD, vietsub, captioned) movies updated continuously at phimhottt.com"
+    },
+    "Heading":{    
+        "relation_movie": "Relation Movie",
+        "hot_movie": "Hot Movie",
+        "maybe_youlike": "You May Like",
+        "new_movie": "Outstanding New Movie",
+        "new_cinema_movies": "Newly Updated Theatrical Movies",
+        "new_series": "Newly Updated Series",
+        "new_retail_movies": "Newly Updated Retail Movies",
+        "news": "News",
+        "year_publish": "Year Publish"
+    },
+    "Navigation":{
+        "categories" : "Categories",
+        "store": "Store"
+    }
+}

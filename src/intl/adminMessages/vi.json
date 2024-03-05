@@ -1,0 +1,40 @@
+{  
+    "NotFoundPage":{
+        "title":"404 không tìm thấy",
+        "subtitle":"Rất tiếc! Trang đó không tồn tại.",
+        "description":"Dưới đây là một số liên kết hữu ích thay thế:"
+    },
+    "Meta":{
+        "title":{
+            "index": "Bảng Điều Khiển",
+            "MovieList":"Danh Sách Phim",
+            "home":"Trang Chủ",
+            "product": "Sản Phẩm",
+            "category": "Danh Mục",
+            "order": "Đơn Hàng"
+        }
+    },
+    "Dashboard":{
+        "sale_by_gender": "Bán theo giới tính"
+    },
+    "Ecommflex":{
+        "title":"Một ứng dụng web thương mại điện tử | Ecommflex",
+        "description":"Mẫu thương mại điện tử React Next.js. Xây dựng cửa hàng trực tuyến, ứng dụng giao hàng và cửa hàng Multivendor thân thiện với SEO"
+    },
+    "Contain":{    
+        "title": "Tất cả cửa hàng",
+        "list":{
+            "movie":{
+                "types":{
+                    "single":"Phim Lẻ",
+                    "series":"Phim Bộ",
+                    "review":"Review Phim"
+                }
+            }
+        }
+    },
+    "Navigation":{
+        "categories" : "Danh Mục",
+        "store": "Cửa Hàng"
+    }
+}
